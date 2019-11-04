@@ -53,7 +53,7 @@ app.locals.version = pack.version;
 /* Routes */
 app.use(config.url, express.static(path.join(__dirname, 'public')));
 app.get(config.url, function (req, res) {
-    res.render('index.ejs', {version:pack.version});
+    res.render('index', {version:pack.version});
 });
 
 
