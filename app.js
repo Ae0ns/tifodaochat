@@ -213,7 +213,7 @@ function handleSocket(user, message) {
             } else {
                 data.type = 'light';
                 data.subtxt = null;
-                data.message = utils.checkUser(clients, data.extra) ? 'Você não pode\'PM você mesmo' : 'Usuário não encontrado';
+                data.message = utils.checkUser(clients, data.extra) ? 'Você não pode PM você mesmo' : 'Usuário não encontrado';
                 utils.sendBack(clients, data, user);
             }
             break;
@@ -225,7 +225,7 @@ function handleSocket(user, message) {
                         return utils.sendToAll(clients, data);
                     } else {
                         data.subtxt = null;
-                        data.message = 'Você não\' tem permissão para fazer isso';
+                        data.message = 'Você não tem permissão para fazer isso';
                         return utils.sendBack(clients, data, user);
                     }
                 } else {
