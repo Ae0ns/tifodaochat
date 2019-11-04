@@ -41,11 +41,13 @@ if(config.readline.use) {
     rl.prompt();
 }
 
+var app = express();
 
 /* Express */
 app.set('port', port);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.set('views', './views');
 app.use(favicon(path.join(__dirname,'public/img/diego.ico')));
 app.locals.version = pack.version;
 
@@ -53,7 +55,7 @@ app.locals.version = pack.version;
 /* Routes */
 app.use(config.url, express.static(path.join(__dirname, 'public')));
 app.get(config.url, function (req, res) {
-    res.render('index', {version:pack.version});
+    res.render('index', {version:pack.version}); //arquivo index.ejs
 });
 
 
