@@ -47,7 +47,6 @@ var app = express();
 app.set('port', port);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-app.set('views', './app/views');
 app.use(favicon(path.join(__dirname,'public/img/diego.ico')));
 app.locals.version = pack.version;
 
@@ -55,7 +54,7 @@ app.locals.version = pack.version;
 /* Routes */
 app.use(config.url, express.static(path.join(__dirname, 'public')));
 app.get(config.url, function (req, res) {
-    res.render('index', {version:pack.version}); //arquivo index.ejs
+    res.render('index.ejs', {version:pack.version}); //arquivo index.ejs
 });
 
 
